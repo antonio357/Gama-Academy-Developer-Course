@@ -1,0 +1,26 @@
+body {
+    background-color: rgb(188, 225, 240);
+    font-family: sans-serif; /*defines the letter*/
+}
+
+#header {
+    border: black 1px solid; /*creates the border*/
+    border-radius: 10px; /*rounds the border */
+    padding-left: 50px; /*intern border*/
+    margin-top: 30px; /*external border*/
+    margin-bottom: 30px;
+    box-shadow: black 2px 2px 5px;  
+}
+
+#content {
+    background-color: white;
+    margin-left: 5%;
+    margin-right: 5%;
+    padding: 2%;
+}
+
+a {
+    font-family: cursive;
+    color: tomato;
+    text-decoration: unset;
+}
