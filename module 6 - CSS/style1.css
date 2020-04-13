@@ -64,8 +64,16 @@ a {
 }
 
 h2 {
+    animation-name: changeColor;
+    animation-duration: 3s;
+    color: blueviolet;
     display: flex;
     justify-content: center;
+}
+
+@keyframes changeColor {
+    from {color: greenyellow;}
+    to {color: blueviolet;}
 }
 
 #Rodape {
