@@ -24,3 +24,20 @@ a {
     color: tomato;
     text-decoration: unset;
 }
+
+#navbar {
+    display: flex;
+    justify-content: space-around;
+    margin: 20px;
+}
+
+#mainImage {
+    width: 100%;
+}
+
+#Title {
+    display: flex;
+    justify-content: center;
+    text-shadow: gray 1px 1px 5px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
