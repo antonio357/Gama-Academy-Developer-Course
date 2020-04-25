@@ -1,0 +1,27 @@
+.container {
+    background-color: aquamarine;
+}
+
+h3 {
+    margin: 10px;
+    text-align: center;
+    color: rgb(180, 59, 79);
+    animation-name: H3;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes H3 {
+    form {color: rgb(180, 59, 79);}
+    to {color: aquamarine;}
+}
+
+#logo-img {
+    margin-top: 10px;
+    width: 100%;
+}
+
+.card {
+    margin-bottom: 10px;
+    /* width: 18rem; */
+}
