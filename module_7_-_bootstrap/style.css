@@ -12,8 +12,12 @@ h3 {
 }
 
 @keyframes H3 {
-    form {color: rgb(180, 59, 79);}
-    to {color: aquamarine;}
+    form {
+        color: rgb(180, 59, 79);
+    }
+    to {
+        color: aquamarine;
+    }
 }
 
 #logo-img {
