@@ -33,12 +33,19 @@ function validateCPF() {
     document.getElementById("error").style.display = "none";
 
     let cpfTyped = document.getElementById("cpf_typed").value;
+    console.log("validateCPF -> cpfTyped", cpfTyped);
+    let regex = new RegExp("[0-9]{11}");
+    cpfTyped = cpfTyped.match(regex);
+    if (cpfTyped !== null) {
+        cpfTyped = cpfTyped.toString();
+        console.log("validateCPF -> cpfTyped", cpfTyped);
 
-    if (isCpfValid(cpfTyped)) {
-        document.getElementById("success").style.display = "block";
-        console.log("valid cpf");
-    } else {
-        document.getElementById("error").style.display = "block";
-        console.log("invalid cpf");
+        if (isCpfValid(cpfTyped)) {
+            document.getElementById("success").style.display = "block";
+            console.log("valid cpf");
+            return;
+        }
     }
+    document.getElementById("error").style.display = "block";
+    console.log("invalid cpf");
 }
