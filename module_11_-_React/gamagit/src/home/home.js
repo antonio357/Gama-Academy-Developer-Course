@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
 import axios from 'axios' // deals with http requests
 
+import * as styled from "./styled"
+
 // class is a key word in js, so tags uses className now
-function Home(props) { // props means properties from a component
+function Home() { // props means properties from a component
   const [user, setUser] = useState('')
 
   function handleRequest() {
@@ -14,10 +16,14 @@ function Home(props) { // props means properties from a component
     // {} means that you are including js code at the jsx
     // fragment it is necessary cause the jsx that is return needs to one thing 
     <> 
-      <h1> {props.title} </h1>
-      <p> {user} </p>
-      <input className="gitUserInput" placeholder="type in here" value={user} onChange={e => setUser(e.target.value)} />
-      <button type="button" onClick={handleRequest}> Search </button>
+      <styled.container>
+        <div>
+          <input placeholder="git user name" value={user} onChange={e => setUser(e.target.value)} />
+        </div>
+        <div>
+          <button type="button" onClick={handleRequest}> Search </button>
+        </div>
+      </styled.container>
     </> 
     // fragment it is necessary cause the jsx that is return needs to one thing 
     // JSX
