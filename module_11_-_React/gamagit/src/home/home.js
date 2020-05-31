@@ -8,7 +8,17 @@ function Home() { // props means properties from a component
   const [user, setUser] = useState('')
 
   function handleRequest() {
-    axios.get(`https://api.github.com/users/${user}/repos`).then(response => console.log(response.data)).catch(err => console.log(err))
+    axios.get(`https://api.github.com/users/${user}/repos`).then(response => {
+      console.log(response.data)
+      let repos = []
+      response.data.map((repo) => {
+        repos.push({name: repo.name, link: repo.html_url})
+      })
+      localStorage.setItem("repos", JSON.stringify(repos))
+    }).catch(err => {
+      console.error(err)
+      window.alert(`github didn't find user with name "${user}"`)
+    })
   }
 
   return ( 
@@ -18,7 +28,7 @@ function Home() { // props means properties from a component
     <> 
       <styled.container>
         <div>
-          <input placeholder="git user name" value={user} onChange={e => setUser(e.target.value)} />
+          <input placeholder="github user name" value={user} onChange={e => setUser(e.target.value)} />
         </div>
         <div>
           <button type="button" onClick={handleRequest}> Search </button>
