@@ -4,20 +4,11 @@ export const container = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 100%;
-    
-    div {
-        margin: 5px;
-    }   
-
-    ul {
-        all: inherit
-    }
 
     li {
         all: inherit;
-        padding: 5px;
-        border-radius: 10px;
+        padding: 8px;
+        border-radius: 6px;
         background-color: burlywood;
     }
 `;

@@ -1,20 +1,23 @@
 import React, { useState } from 'react';
 import axios from 'axios' // deals with http requests
+import {useHistory} from "react-router-dom"
 
 import * as styled from "./styled"
 
 // class is a key word in js, so tags uses className now
 function Home() { // props means properties from a component
+  const history = useHistory();
   const [user, setUser] = useState('')
 
   function handleRequest() {
     axios.get(`https://api.github.com/users/${user}/repos`).then(response => {
-      console.log(response.data)
+    console.log("handleRequest -> response", response)
       let repos = []
       response.data.map((repo) => {
         repos.push({name: repo.name, link: repo.html_url})
       })
       localStorage.setItem("repos", JSON.stringify(repos))
+      history.push("/repos")
     }).catch(err => {
       console.error(err)
       window.alert(`github didn't find user with name "${user}"`)
