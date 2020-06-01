@@ -7,7 +7,7 @@ export const container = styled.div`
 
     div {
         margin: 5px;
-    }   
+    }
 
     input {
         border-radius: 10px;
@@ -15,7 +15,8 @@ export const container = styled.div`
         border: 2px solid violet;
         outline: none;
 
-        :focus, :hover {
+        :focus,
+        :hover {
             border: 2px solid blueviolet;
             background-color: aliceblue;
         }
@@ -27,10 +28,10 @@ export const container = styled.div`
         border: 2px solid violet;
         background-color: white;
 
-        :focus, :hover {
+        :focus,
+        :hover {
             border: 2px solid blueviolet;
             background-color: aliceblue;
         }
-
     }
 `;

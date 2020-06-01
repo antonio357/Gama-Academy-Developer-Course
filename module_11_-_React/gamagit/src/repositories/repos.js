@@ -16,7 +16,7 @@ export default function Repos() {
         JSON.parse(localRequest).map((repo) => repos.push(repo))
         console.log("Repos -> repos", repos)
         setReposLi(repos.map(repo => {
-            return <li> {repo.name} <a href={repo.link}> go to repository </a> </li>
+            return <li key={repo.name}> {repo.name} <a href={repo.link}> go to repository </a> </li>
         }))
         localStorage.clear();
     }, []);
@@ -28,6 +28,7 @@ export default function Repos() {
                 <ul>
                     {reposLi}
                 </ul>
+                <styled.link to="/"> return </styled.link>
             </styled.container>
         </>
     );

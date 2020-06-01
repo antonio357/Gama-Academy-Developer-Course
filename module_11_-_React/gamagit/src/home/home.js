@@ -8,9 +8,11 @@ import * as styled from "./styled"
 function Home() { // props means properties from a component
   const history = useHistory();
   const [user, setUser] = useState('')
+  const [erro, setErro] = useState(false)
 
   function handleRequest() {
-    axios.get(`https://api.github.com/users/${user}/repos`).then(response => {
+    axios.get(`https://api.github.com/users/${user}/repos`)
+    .then(response => {
     console.log("handleRequest -> response", response)
       let repos = []
       response.data.map((repo) => {
@@ -18,9 +20,11 @@ function Home() { // props means properties from a component
       })
       localStorage.setItem("repos", JSON.stringify(repos))
       history.push("/repos")
-    }).catch(err => {
+    })
+    .catch(err => {
       console.error(err)
-      window.alert(`github didn't find user with name "${user}"`)
+      console.log(`github didn't find user with name "${user}"`)
+      setErro(true)
     })
   }
 
@@ -31,11 +35,12 @@ function Home() { // props means properties from a component
     <> 
       <styled.container>
         <div>
-          <input placeholder="github user name" value={user} onChange={e => setUser(e.target.value)} />
+          <input placeholder="github user name" value={user} onChange={e => {setUser(e.target.value)}} onClick={() => {setErro(false); setUser('')}}/>
         </div>
         <div>
           <button type="button" onClick={handleRequest}> Search </button>
         </div>
+        {erro ? <div>github username not found</div>: ''} {/* condicional rendering */}
       </styled.container>
     </> 
     // fragment it is necessary cause the jsx that is return needs to one thing 
