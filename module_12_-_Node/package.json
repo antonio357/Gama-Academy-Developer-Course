@@ -1,0 +1,14 @@
+{
+  "name": "module_12_-_Node",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "class-01": "node index.js",
+    "class-02": "node javaScriptSynchronization.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
