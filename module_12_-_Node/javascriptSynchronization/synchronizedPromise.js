@@ -1,11 +1,4 @@
-function time(time=null) {
-    if (time) return time;
-    return Math.ceil(Math.random() * 5000)
-}
-
-function printUser() {
-    console.log(`user: {${user.id}, ${user.name}, ${user.cell}, ${user.adress}}`)
-}
+const {time, printUser} = require('./utils') 
 
 function getUser() {
     new Promise((resolve, reject) => {
@@ -40,7 +33,7 @@ function getUserAddress() {
             }
             resolve()
         }, time())
-    }).then(printUser)
+    }).then(() => {printUser(user)})
 }
 
 let user;

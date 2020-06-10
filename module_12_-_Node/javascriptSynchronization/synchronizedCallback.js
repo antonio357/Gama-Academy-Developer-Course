@@ -1,11 +1,4 @@
-function time(time=null) {
-    if (time) return time;
-    return Math.ceil(Math.random() * 5000)
-}
-
-function printUser() {
-    console.log(`user: {${user.id}, ${user.name}, ${user.cell}, ${user.adress}}`)
-}
+const {time, printUser} = require('./utils') 
 
 function getUser(callback) {
     setTimeout(() => {
@@ -41,6 +34,8 @@ function getUserAddress(callback) {
 let user;
 getUser(() => {
     getUserCell(() => {
-        getUserAddress(printUser)
+        getUserAddress(() => {
+            printUser(user)
+        })
     })
 })

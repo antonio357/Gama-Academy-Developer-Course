@@ -1,12 +1,9 @@
-function time(time=null) {
-    if (time) return time;
-    return Math.ceil(Math.random() * 5000)
-}
+const {time, printUser} = require('./utils') 
 
-async function printUser() {
+async function main() {
     console.time()
     await Promise.all([getUser(), getUserCell(), getUserAddress()])
-    console.log(`user: {${user.id}, ${user.name}, ${user.cell}, ${user.adress}}`)
+    printUser(user)
     console.log("as all the promisses were handled in parallel this is the time")
     console.timeEnd()
 }
@@ -48,4 +45,4 @@ function getUserAddress() {
 }
 
 let user;
-printUser()
+main()
