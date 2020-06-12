@@ -7,15 +7,21 @@ const api = axios.create({
 async function getPerson(name) {
     const url = `/?search=${name}&format=json`
     const result = await api.get(url)
-    return nameMass(result)
+    // return mapPerson(result.data.results[0])
+    return result.data.results.map(mapPerson)
 }
 
-function nameMass(data) {
-    const obj = {name:data.name, mass:data.mass}
-    return obj
-}
+// function mapPerson(data) {
+//     const {name, mass} = data
+//     return {name, mass}
+// }
 
-getPerson()
+function mapPerson(item) {
+    return {
+        name: item.name,
+        mass: item.mass
+    }
+}
 
 module.exports = {
     getPerson
