@@ -1,8 +1,6 @@
 const ICrud = require('./interfaces/interfaceCrud')
 const Sequelize = require('sequelize')
 
-
-
 class Postgres extends ICrud {
     constructor() {
         super()
@@ -20,7 +18,7 @@ class Postgres extends ICrud {
         }
     }
     create(item) {
-        console.log("The item was registered in Postegres")
+        return this._heros.create(item)
     }
     async defineModel() {
         this._heros = driver.define('heros', {
