@@ -49,5 +49,3 @@ function polymorfismByClass() {
 
 polymorfismByClass()
 polymorfismByInterface()
-
-// adding new line 
