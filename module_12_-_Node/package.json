@@ -19,7 +19,7 @@
     "sequelize": "^5.21.13"
   },
   "devDependencies": {
-    "mocha": "^8.0.1",
+    "mocha": "^8.4.0",
     "nock": "^12.0.3"
   }
 }
